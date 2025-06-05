@@ -1,4 +1,6 @@
-﻿namespace StoredProcedure.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StoredProcedure.Models
 {
     public class Employee
     {

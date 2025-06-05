@@ -1,0 +1,60 @@
+﻿<body style="padding:">
+    <div class="col-xs-8">
+        <div class="panel/heading">
+            <h3>Employee Search Form</h3>
+        </div>
+        <form asp-controller="Employee" asp-action="DynamicSQL">
+            <div>
+                <label for="firstName">First name</label>
+                <br />
+                <input type="text" name="firstName" placeholder="Firstname" />
+            </div>
+            <br />
+            <div>
+                <label for="lastName">Lastname</label>
+                <br />
+                <input type="text" name="lastName" placeholder="Lastname" />
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <br />
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <br />
+            <div>   
+                <label for="salary">DynamicSQL</label>
+                <br />
+                <input type="number" name="DynamicSQL" placeholder="DynamicSQL" />
+            </div>
+            <br />
+            <input type="submit" value="DynamicSQL" />
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var employee in Model)
+                {
+                    <tr>
+                        <td> @employee.FirstName</td>
+                        <td> @employee.LastName</td>
+                        <td> @employee.Gender</td>
+                        <td> @employee.Salary</td>
+                       
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</body>
